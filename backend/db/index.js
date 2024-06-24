@@ -1,13 +1,9 @@
-// creating connectivity with Postgres Databse
+const pg = require("pg")
 
-const {Pool} =require("pg")
+const { Pool } = pg;
+
 const pool = new Pool({
-    user:"postgres",
-    host:"localhost",
-    database:"postgres",
-    password:"ASHWINI",
-    port:5432
-
-});
+  connectionString: process.env.POSTGRES_URL,
+})
 
 module.exports =pool;
